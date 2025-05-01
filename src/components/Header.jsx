@@ -40,7 +40,7 @@ const Header = () => {
           <div ref={shopRef}>
             <button
               onClick={() => toggleDropdown("shop")}
-              className="flex items-center hover:text-[#527557] font-semibold"
+              className="flex items-center hover:text-[#527557] font-semibold cursor-pointer"
             >
               Shop
               <ChevronDown
@@ -84,7 +84,7 @@ const Header = () => {
           <div ref={collectionRef}>
             <button
               onClick={() => toggleDropdown("collection")}
-              className="flex items-center hover:text-[#527557] font-semibold"
+              className="flex items-center hover:text-[#527557] font-semibold cursor-pointer"
             >
               Collection
               <ChevronDown
@@ -183,14 +183,18 @@ const Header = () => {
 
         {/* Right icons */}
         <div className="flex items-center space-x-4">
-          <button className="hover:text-[#527557]">
+          <button className="hover:text-[#527557] cursor-pointer">
             <LuSearch className="text-[24px] lg:text-[26px]" />
           </button>
-          <button className="hover:text-[#527557]">
-            <CgShoppingBag className="text-[24px] lg:text-[26px]" />
+          <button className="hover:text-[#527557] cursor-pointer">
+            <Link to="/cart">
+              <CgShoppingBag className="text-[24px] lg:text-[26px]" />
+            </Link>
           </button>
-          <button className="hover:text-[#527557]">
-            <FiUser className="text-[24px] lg:text-[26px]" />
+          <button className="hover:text-[#527557] cursor-pointer">
+            <Link to="/login">
+              <FiUser className="text-[24px] lg:text-[26px]" />
+            </Link>
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -203,15 +207,15 @@ const Header = () => {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t px-4 py-3 space-y-4 lg:text-xl">
-          <Link to="/" className="block">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md border-t px-4 py-3 space-y-4 lg:text-xl z-50">
+          <Link to="/newarrivals" className="block">
             New Arrivals
           </Link>
 
           <div>
             <button
               className="w-full flex justify-between items-center"
-              onClick={() => toggleDropdown("shop")} // Use toggleDropdown for mobile
+              onClick={() => toggleDropdown("shop")}
             >
               Shop
               <ChevronDown
@@ -223,19 +227,19 @@ const Header = () => {
             </button>
             {shopOpen && (
               <div className="grid grid-cols-2 gap-2 mt-2 pl-2">
-                <Link to="/all-products" className="block">
+                <Link to="/all-products" className="block text-gray-600">
                   All Product
                 </Link>
-                <Link to="/kids" className="block">
+                <Link to="/kids" className="block text-gray-600">
                   Kids
                 </Link>
-                <Link to="/man" className="block">
+                <Link to="/man" className="block text-gray-600">
                   Man
                 </Link>
-                <Link to="/accessories" className="block">
+                <Link to="/accessories" className="block text-gray-600">
                   Accessories
                 </Link>
-                <Link to="/woman" className="block">
+                <Link to="/woman" className="block text-gray-600">
                   Woman
                 </Link>
               </div>
@@ -245,7 +249,7 @@ const Header = () => {
           <div>
             <button
               className="w-full flex justify-between items-center"
-              onClick={() => toggleDropdown("collection")} // Use toggleDropdown for mobile
+              onClick={() => toggleDropdown("collection")}
             >
               Collection
               <ChevronDown
@@ -256,18 +260,66 @@ const Header = () => {
               />
             </button>
             {collectionOpen && (
-              <div className="pl-2 mt-2 space-y-2">
-                <Link to="/spring" className="block">
-                  Spring
+              <div className="mt-4 grid grid-cols-2 gap-4">
+                <Link
+                  to="/collection/classic-green-tee"
+                  className="relative group"
+                >
+                  <img
+                    src="/images/Collection1.png"
+                    alt="Classic Green Tee"
+                    className="rounded-lg w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 flex items-end justify-center p-2 rounded-lg">
+                    <span className="text-white text-sm font-medium">
+                      Classic Green Tee
+                    </span>
+                  </div>
                 </Link>
-                <Link to="/winter" className="block">
-                  Winter
+
+                <Link to="/collection/yellow-dress" className="relative group">
+                  <img
+                    src="/images/Collection2.png"
+                    alt="Yellow Dress"
+                    className="rounded-lg w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 flex items-end justify-center p-2 rounded-lg">
+                    <span className="text-white text-sm font-medium">
+                      Yellow Dress
+                    </span>
+                  </div>
+                </Link>
+
+                <Link to="/collection/camo-jacket" className="relative group">
+                  <img
+                    src="/images/Collection3.png"
+                    alt="Camo Jacket"
+                    className="rounded-lg w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 flex items-end justify-center p-2 rounded-lg">
+                    <span className="text-white text-sm font-medium">
+                      Camo Jacket
+                    </span>
+                  </div>
+                </Link>
+
+                <Link to="/collection/black-dress" className="relative group">
+                  <img
+                    src="/images/Collection4.png"
+                    alt="Black Dress"
+                    className="rounded-lg w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 flex items-end justify-center p-2 rounded-lg">
+                    <span className="text-white text-sm font-medium">
+                      Black Dress
+                    </span>
+                  </div>
                 </Link>
               </div>
             )}
           </div>
 
-          <Link to="/our-story" className="block">
+          <Link to="/ourstory" className="block">
             Our Story
           </Link>
         </div>

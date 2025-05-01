@@ -1,25 +1,46 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
 import NewArrivalsPage from "./components/NewArrivalsPage";
 import SingleProduct from "./components/SingleProduct";
 import OurStoryPage from "./components/OurStoryPage";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
-function App() {
+function AppWrapper() {
+  const location = useLocation();
+  const hideHeaderFooter =
+    location.pathname === "/login" || location.pathname === "/signup";
+
   return (
-    <Router>
-      {/* Routes for each page */}
-      <Header />
+    <>
+      {!hideHeaderFooter && <Header />}
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         {/* 01/05/2025 */}
         <Route path="/newarrivals" element={<NewArrivalsPage />} />
         <Route path="/singleproduct" element={<SingleProduct />} />
         <Route path="/ourstory" element={<OurStoryPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
 
-      <Footer />
+      {!hideHeaderFooter && <Footer />}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppWrapper />
     </Router>
   );
 }
