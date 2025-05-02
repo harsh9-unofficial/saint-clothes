@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="relative md:absolute z-10 w-full h-full flex flex-col justify-end py-2">
         <div className="container mx-auto py-4 sm:py-6 lg:py-10 xl:py-14 2xl:py-20 border-b grid grid-cols-1 sm:grid-cols-12 lg:grid-cols-16 gap-y-6 mg:gap-y-4">
           {/* Left Links */}
-          <div className="flex flex-col space-y-2 sm:space-y-3 text-center justify-center col-span-1 sm:col-span-3 lg:col-span-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl">
+          <div className="flex flex-col space-y-2 sm:space-y-3 text-center justify-center col-span-1 sm:col-span-3 lg:col-span-4 text-lg sm:text-xl lg:text-2xl">
             <Link to="#" className="hover:underline py-3 sm:py-4">
               About
             </Link>
@@ -34,7 +34,7 @@ const Footer = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold py-3 sm:py-4">
               Get Updates
             </h2>
-            <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl py-3 sm:py-4 mx-auto w-[90%]">
+            <p className="text-lg sm:text-xl lg:text-2xl py-3 sm:py-4 mx-auto w-[90%]">
               Subscribe to our newsletter to receive updates on new arrivals,
               special offers, and other discount information.
             </p>
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
 
           {/* Right Links */}
-          <div className="flex flex-col space-y-2 sm:space-y-3 text-center justify-center col-span-1 sm:col-span-3 lg:col-span-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl">
+          <div className="flex flex-col space-y-2 sm:space-y-3 text-center justify-center col-span-1 sm:col-span-3 lg:col-span-4 text-lg sm:text-xl lg:text-2xl">
             <Link to="#" className="hover:underline py-3 sm:py-4">
               Privacy & Policy
             </Link>

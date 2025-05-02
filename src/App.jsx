@@ -12,6 +12,8 @@ import SingleProduct from "./components/SingleProduct";
 import OurStoryPage from "./components/OurStoryPage";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Checkout from "./components/CheckoutPage";
+import Contact from "./components/Contact";
 
 function AppWrapper() {
   const location = useLocation();
@@ -30,6 +32,9 @@ function AppWrapper() {
         <Route path="/ourstory" element={<OurStoryPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        {/* 02/05/2025 */}
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       {!hideHeaderFooter && <Footer />}
