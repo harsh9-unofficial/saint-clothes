@@ -1,5 +1,6 @@
 import React from "react";
 import { FiShoppingBag } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const products = [
   {
@@ -46,11 +47,13 @@ const FeaturedProducts = () => {
             className="bg-white rounded-xl overflow-hidden border shadow-sm hover:shadow-md transition-all duration-300"
           >
             <div className="relative">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full object-cover"
-              />
+              <Link to="/singleproduct">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full object-cover"
+                />
+              </Link>
               <span className="absolute bottom-2 left-2 bg-[#527557] text-[#F6F6F6] text-xs px-2 py-1 rounded">
                 {product.category}
               </span>
@@ -64,7 +67,7 @@ const FeaturedProducts = () => {
 
               <div className="flex justify-between items-center gap-2">
                 <button className="flex-1 bg-[#527557] text-[#F6F6F6] py-2 px-3 rounded cursor-pointer text-sm">
-                  View Details
+                  <Link to="/singleproduct">View Details</Link>
                 </button>
                 <button className="p-2 border border-[#527557] bg-[#527557] rounded cursor-pointer">
                   <FiShoppingBag className="text-[#F6F6F6]" />
