@@ -1,5 +1,5 @@
-import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { LuSearch } from "react-icons/lu";
 import { CgShoppingBag } from "react-icons/cg";
 import { FiUser } from "react-icons/fi";
@@ -14,15 +14,23 @@ const Header = () => {
   const shopRef = useRef(null);
   const collectionRef = useRef(null);
 
+  const location = useLocation(); // Hook to get the current location
+
   const toggleDropdown = (menu) => {
     if (menu === "shop") {
       setShopOpen(!shopOpen);
-      if (!shopOpen) setCollectionOpen(false);
+      if (!shopOpen) setCollectionOpen(false); // Close collection if shop is opened
     } else if (menu === "collection") {
       setCollectionOpen(!collectionOpen);
-      if (!collectionOpen) setShopOpen(false);
+      if (!collectionOpen) setShopOpen(false); // Close shop if collection is opened
     }
   };
+
+  // Close dropdowns whenever the route changes
+  useEffect(() => {
+    setShopOpen(false);
+    setCollectionOpen(false);
+  }, [location]);
 
   return (
     <header className="shadow-md relative top-0 z-50 bg-white">
@@ -55,24 +63,33 @@ const Header = () => {
               <div className="absolute left-0 top-full w-full bg-white shadow-lg border-t z-40">
                 <div className="container mx-auto px-4 py-4 grid grid-rows-3 grid-flow-col gap-4">
                   <Link
-                    to="/all-products"
+                    to="/allproducts"
                     className="hover:underline font-semibold"
                   >
                     All Product
                   </Link>
-                  <Link to="/kids" className="hover:underline font-semibold">
+                  <Link
+                    to="/shop/kids"
+                    className="hover:underline font-semibold"
+                  >
                     Kids
                   </Link>
-                  <Link to="/man" className="hover:underline font-semibold">
+                  <Link
+                    to="/shop/man"
+                    className="hover:underline font-semibold"
+                  >
                     Man
                   </Link>
                   <Link
-                    to="/accessories"
+                    to="/shop/accessories"
                     className="hover:underline font-semibold"
                   >
                     Accessories
                   </Link>
-                  <Link to="/woman" className="hover:underline font-semibold">
+                  <Link
+                    to="/shop/woman"
+                    className="hover:underline font-semibold"
+                  >
                     Woman
                   </Link>
                 </div>
@@ -227,19 +244,19 @@ const Header = () => {
             </button>
             {shopOpen && (
               <div className="grid grid-cols-2 gap-2 mt-2 pl-2">
-                <Link to="/all-products" className="block text-gray-600">
+                <Link to="/allproducts" className="block text-gray-600">
                   All Product
                 </Link>
-                <Link to="/kids" className="block text-gray-600">
+                <Link to="/shop/kids" class className="block text-gray-600">
                   Kids
                 </Link>
-                <Link to="/man" className="block text-gray-600">
+                <Link to="/shop/man" className="block text-gray-600">
                   Man
                 </Link>
-                <Link to="/accessories" className="block text-gray-600">
+                <Link to="/shop/accessories" className="block text-gray-600">
                   Accessories
                 </Link>
-                <Link to="/woman" className="block text-gray-600">
+                <Link to="/shop/woman" className="block text-gray-600">
                   Woman
                 </Link>
               </div>

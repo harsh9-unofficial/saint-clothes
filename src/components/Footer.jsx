@@ -15,13 +15,13 @@ const Footer = () => {
         <div className="container mx-auto py-4 sm:py-6 lg:py-10 xl:py-14 2xl:py-20 border-b grid grid-cols-1 sm:grid-cols-12 lg:grid-cols-16 gap-y-6 mg:gap-y-4">
           {/* Left Links */}
           <div className="flex flex-col space-y-2 sm:space-y-3 text-center justify-center col-span-1 sm:col-span-3 lg:col-span-4 text-lg sm:text-xl lg:text-2xl">
-            <Link to="#" className="hover:underline py-3 sm:py-4">
+            <Link to="/ourstory" className="hover:underline py-3 sm:py-4">
               About
             </Link>
-            <Link to="#" className="hover:underline py-3 sm:py-4">
+            <Link to="/allproducts" className="hover:underline py-3 sm:py-4">
               Product
             </Link>
-            <Link to="#" className="hover:underline py-3 sm:py-4">
+            <Link to="/contact" className="hover:underline py-3 sm:py-4">
               Contact Us
             </Link>
             <Link to="#" className="hover:underline py-3 sm:py-4">
@@ -62,16 +62,19 @@ const Footer = () => {
 
           {/* Right Links */}
           <div className="flex flex-col space-y-2 sm:space-y-3 text-center justify-center col-span-1 sm:col-span-3 lg:col-span-4 text-lg sm:text-xl lg:text-2xl">
-            <Link to="#" className="hover:underline py-3 sm:py-4">
+            <Link to="/privacypolicy" className="hover:underline py-3 sm:py-4">
               Privacy & Policy
             </Link>
-            <Link to="#" className="hover:underline py-3 sm:py-4">
+            <Link
+              to="/termsandconditions"
+              className="hover:underline py-3 sm:py-4"
+            >
               Terms & Condition
             </Link>
-            <Link to="#" className="hover:underline py-3 sm:py-4">
+            <Link to="/shippingpolicy" className="hover:underline py-3 sm:py-4">
               Shipping Policy
             </Link>
-            <Link to="#" className="hover:underline py-3 sm:py-4">
+            <Link to="/returnpolicy" className="hover:underline py-3 sm:py-4">
               Return Policy
             </Link>
           </div>
