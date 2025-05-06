@@ -24,6 +24,7 @@ import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 import TermsPage from "./components/TermsPage";
 import ShippingPolicyPage from "./components/ShippingPolicyPage";
 import ReturnPolicyPage from "./components/ReturnPolicyPage";
+import Cart from "./components/Cart";
 
 // ✅ ScrollToTop component inside same file
 function ScrollToTop() {
@@ -70,6 +71,8 @@ function AppWrapper() {
         <Route path="/termsandconditions" element={<TermsPage />} />
         <Route path="/shippingpolicy" element={<ShippingPolicyPage />} />
         <Route path="/returnpolicy" element={<ReturnPolicyPage />} />
+        {/* 06/05/2025 */}
+        {/* <Route path="/cart" element={<Cart />} /> */}
       </Routes>
 
       {!hideHeaderFooter && <Footer />}

@@ -6,7 +6,9 @@ const Signup = () => {
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left Panel */}
       <div className="hidden md:w-1/2 bg-[#527557] text-[#F6F6F6] p-10 md:flex flex-col justify-center items-start space-y-4 ">
-        <h2 className="md:text-3xl xl:text-5xl font-semibold">Join the community!</h2>
+        <h2 className="md:text-3xl xl:text-5xl font-semibold">
+          Join the community!
+        </h2>
         <p className="md:text-xl xl:text-2xl">
           Create your account and unlock a world of personalized experiences. It
           only takes a moment to get started—let's go!
@@ -26,7 +28,7 @@ const Signup = () => {
             </Link>
           </div>
           <form className="space-y-6">
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1">
               <label
                 htmlFor="username"
                 className="block text-lg font-semibold text-[#527557]"
@@ -41,7 +43,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1">
               <label
                 htmlFor="email"
                 className="block text-lg font-semibold text-[#527557]"
@@ -56,7 +58,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1">
               <label
                 htmlFor="phonenumber"
                 className="block text-lg font-semibold text-[#527557]"
@@ -71,7 +73,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1">
               <label
                 htmlFor="password"
                 className="block text-lg font-semibold text-[#527557]"
@@ -86,7 +88,7 @@ const Signup = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-1">
               <label
                 htmlFor="repassword"
                 className="block text-lg font-semibold text-[#527557]"

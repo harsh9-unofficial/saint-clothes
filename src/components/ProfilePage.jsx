@@ -34,8 +34,18 @@ export default function ProfilePage() {
       status: "Delivered",
       total: "29,000.00",
       items: [
-        { name: "Classic Green Tee", quantity: 2, price: "29,999", total: "29,000.00" },
-        { name: "Classic Green Tee", quantity: 2, price: "29,999", total: "29,000.00" },
+        {
+          name: "Classic Green Tee",
+          quantity: 2,
+          price: "29,999",
+          total: "29,000.00",
+        },
+        {
+          name: "Classic Green Tee",
+          quantity: 2,
+          price: "29,999",
+          total: "29,000.00",
+        },
       ],
       tracking: [
         { status: "Order Placed", date: "20 May, 2024", completed: true },
@@ -50,8 +60,18 @@ export default function ProfilePage() {
       status: "Cancel",
       total: "29,000.00",
       items: [
-        { name: "Classic Green Tee", quantity: 2, price: "29,999", total: "29,000.00" },
-        { name: "Classic Green Tee", quantity: 2, price: "29,999", total: "29,000.00" },
+        {
+          name: "Classic Green Tee",
+          quantity: 2,
+          price: "29,999",
+          total: "29,000.00",
+        },
+        {
+          name: "Classic Green Tee",
+          quantity: 2,
+          price: "29,999",
+          total: "29,000.00",
+        },
       ],
       tracking: [
         { status: "Order Placed", date: "20 May, 2024", completed: true },
@@ -67,7 +87,7 @@ export default function ProfilePage() {
       {/* Sidebar */}
       <aside className="w-full md:w-64 lg:w-80 border border-gray-400 p-4 lg:p-6 flex flex-col justify-between h-fit">
         <div className="flex flex-col items-center space-y-2">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row items-center gap-2">
             <div className="relative">
               <img
                 src={profilePic}
@@ -82,7 +102,7 @@ export default function ProfilePage() {
                 className="hidden"
               />
             </div>
-            <div>
+            <div className="text-center sm:text-left">
               <h2 className="text-lg font-semibold">Krushant Vamja</h2>
               <p className="text-sm text-gray-500 mb-6">Front-end Developer</p>
             </div>
@@ -120,16 +140,16 @@ export default function ProfilePage() {
         {activeTab === "Profile" ? (
           <>
             {/* Cover Photo */}
-            <div className="relative h-65 md:h-89 lg:h-100">
-              <div className="w-full lg:h-70 py-4 md:py-0 bg-cover bg-center rounded-lg overflow-hidden mb-6">
+            <div className="relative h-63 md:h-92 lg:h-98">
+              <div className="w-full h-full bg-cover bg-center rounded-lg overflow-hidden mb-6">
                 <img
                   src="/images/HeroImg.jpg"
                   alt="Cover Photo"
-                  className="w-full h-full object-cover"
+                  className="w-full h-48 md:h-65 lg:h-70 py-4 md:py-0 bg-center rounded-lg overflow-hidden mb-6"
                 />
                 <label
                   htmlFor="cover-pic-upload"
-                  className="absolute lg:h-70 inset-0 flex items-center justify-center bg-black/35 bg-opacity-50 cursor-pointer opacity-0 hover:opacity-100 transition-opacity"
+                  className="absolute h-48 md:h-65 lg:h-70 rounded-lg inset-0 flex items-center justify-center bg-black/35 cursor-pointer opacity-0 hover:opacity-100 transition-opacity"
                 >
                   <span className="text-white text-sm">Edit Cover Photo</span>
                 </label>
@@ -156,11 +176,11 @@ export default function ProfilePage() {
                   <img
                     src={profilePic}
                     alt="avatar"
-                    className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full mr-2 md:mr-4"
+                    className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full mr-0 sm:mr-4"
                   />
                   <label
                     htmlFor="profile-pic-upload-main"
-                    className="absolute inset-0 flex w-22 h-22 items-center justify-center bg-black/35 bg-opacity-50 rounded-full cursor-pointer opacity-0 hover:opacity-100 transition-opacity"
+                    className="absolute inset-0 flex items-center justify-center bg-black/35 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full cursor-pointer opacity-0 hover:opacity-100 transition-opacity"
                   >
                     <span className="text-white text-sm">Edit</span>
                   </label>
@@ -172,9 +192,13 @@ export default function ProfilePage() {
                     className="hidden"
                   />
                 </div>
-                <div className="py-4">
-                  <h2 className="text-2xl font-semibold">Krushant Vamja</h2>
-                  <p className="text-md text-gray-500">Front-end Developer</p>
+                <div className="py-4 text-center sm:text-left">
+                  <h2 className="text-xl sm:text-2xl font-semibold">
+                    Krushant Vamja
+                  </h2>
+                  <p className="text-sm sm:text-md text-gray-500">
+                    Front-end Developer
+                  </p>
                 </div>
               </div>
             </div>
@@ -182,10 +206,10 @@ export default function ProfilePage() {
             <div className="space-y-10">
               {/* Personal Info */}
               <section>
-                <h3 className="text-lg font-semibold mb-4">
+                <h3 className="text-lg font-semiboldvilla mb-4">
                   Personal Information
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
                     placeholder="First Name"
@@ -199,12 +223,12 @@ export default function ProfilePage() {
                   <input
                     type="email"
                     placeholder="Email Address"
-                    className="border border-gray-300 p-2 w-full md:col-span-2"
+                    className="border border-gray-300 p-2 w-full sm:col-span-2"
                   />
                   <input
                     type="tel"
                     placeholder="Phone Number"
-                    className="border border-gray-300 p-2 w-full md:col-span-2"
+                    className="border border-gray-300 p-2 w-full sm:col-span-2"
                   />
                 </div>
               </section>
@@ -212,16 +236,16 @@ export default function ProfilePage() {
               {/* Shipping Address */}
               <section>
                 <h3 className="text-lg font-semibold mb-4">Shipping Address</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
                     placeholder="Street Address"
-                    className="border border-gray-300 p-2 w-full md:col-span-2"
+                    className="border border-gray-300 p-2 w-full sm:col-span-2"
                   />
                   <input
                     type="text"
                     placeholder="Apartment, suite, etc. (optional)"
-                    className="border border-gray-300 p-2 w-full md:col-span-2"
+                    className="border border-gray-300 p-2 w-full sm:col-span-2"
                   />
                   <input
                     type="text"
@@ -249,11 +273,11 @@ export default function ProfilePage() {
               {/* Payment Method */}
               <section>
                 <h3 className="text-lg font-semibold mb-4">Payment Method</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="border border-gray-300 p-2 w-full md:col-span-2"
+                    className="border border-gray-300 p-2 w-full sm:col-span-2"
                   />
                   <input
                     type="text"
@@ -279,22 +303,27 @@ export default function ProfilePage() {
           <>
             {showTracking && selectedOrder ? (
               <div className="border border-gray-200 rounded-lg p-4">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-lg font-semibold">Tracking Details</h3>
+                <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
+                  <h3 className="text-lg font-semibold mb-2 sm:mb-0">
+                    Tracking Details
+                  </h3>
                   <button
                     onClick={handleBackToOrders}
-                    className="bg-[#527557] text-white px-4 py-2 rounded cursor-pointer"
+                    className="bg-[#527557] text-white px-4 py-2 rounded cursor-pointer w-full sm:w-auto"
                   >
                     Back to Orders
                   </button>
                 </div>
 
                 {/* Tracking Timeline */}
-                <div className="flex justify-between items-center mb-8 border border-gray-200 rounded-lg p-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 border border-gray-200 rounded-lg p-4 space-y-6 sm:space-y-0 sm:space-x-4">
                   {selectedOrder.tracking.map((step, index) => (
-                    <div key={index} className="flex flex-col items-center relative">
+                    <div
+                      key={index}
+                      className="flex flex-col items-center relative w-full sm:w-1/4"
+                    >
                       <div
-                        className={`w-6 h-6 rounded-full flex items-center justify-center mb-2 ${
+                        className={`w-8 h-8 rounded-full flex items-center justify-center mb-2 z-10 ${
                           step.completed ? "bg-green-500" : "bg-gray-300"
                         }`}
                       >
@@ -302,15 +331,17 @@ export default function ProfilePage() {
                           <span className="text-white text-sm">✔</span>
                         )}
                       </div>
-                      <p className="text-sm font-semibold">{step.status}</p>
+                      <p className="text-sm font-semibold text-center">
+                        {step.status}
+                      </p>
                       <p className="text-xs text-gray-500">{step.date}</p>
-                      {index < selectedOrder.tracking.length - 1 && (
+                      {/* {index < selectedOrder.tracking.length - 1 && (
                         <div
-                          className={`absolute top-2 -right-14 w-28 h-1 ${
-                            step.completed ? "bg-gray-300" : "bg-gray-300"
-                          } border-dashed border-2 border-gray-300 z-0`}
+                          className={`sm:absolute sm:top-3 sm:left-10 sm:w-[calc(100%-2.5rem)] w-full h-0.5 mt-2 sm:mt-0 ${
+                            step.completed ? "bg-green-200" : "bg-gray-200"
+                          }`}
                         ></div>
-                      )}
+                      )} */}
                     </div>
                   ))}
                 </div>
@@ -321,24 +352,27 @@ export default function ProfilePage() {
                   {selectedOrder.items.map((item, index) => (
                     <div
                       key={index}
-                      className="flex justify-between items-center mb-6"
+                      className="flex flex-col sm:flex-row justify-between items-center mb-4 space-y-2 sm:space-y-0"
                     >
-                      <div className="flex items-center">
+                      <div className="flex items-center space-x-4 w-full sm:w-auto">
                         <img
                           src="/images/Collection2.png"
                           alt="product"
-                          className="w-24 h-24 rounded mr-4"
+                          className="w-20 h-20 rounded"
                         />
-                        <div>
-                          <h5 className="text-md font-semibold">
-                            {item.name}
-                          </h5>
-                          <p className="text-sm text-gray-500">
+                        <div className="flex-1 space-y-2">
+                          <h5 className="text-sm font-semibold">{item.name}</h5>
+                          <p className="text-xs text-gray-500">
                             {item.quantity} x Rs. {item.price}
+                          </p>
+                          <p className="md:hidden text-sm font-semibold">
+                            {item.total}
                           </p>
                         </div>
                       </div>
-                      <p className="text-md font-semibold">{item.total}</p>
+                      <p className="hidden md:block text-sm font-semibold">
+                        {item.total}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -361,7 +395,7 @@ export default function ProfilePage() {
                     </p>
                   </div>
                   <div className="flex justify-between mb-2">
-                    <p className="text-sm">Text</p>
+                    <p className="text-sm">Tax</p>
                     <p className="text-sm">10%</p>
                   </div>
                   <div className="flex justify-between">
@@ -374,14 +408,16 @@ export default function ProfilePage() {
               </div>
             ) : (
               <>
-                <h3 className="text-lg font-semibold mb-4">Order History</h3>
+                <h3 className="text-xl font-semibold mb-4 pt-8 md:pt-2">
+                  Order History
+                </h3>
                 {orders.map((order) => (
                   <div
                     key={order.id}
                     className="border p-2 sm:p-4 rounded-lg mb-4"
                   >
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-                      <div className="mb-2 sm:mb-0">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 space-y-2 sm:space-y-0">
+                      <div>
                         <p className="text-xs sm:text-sm text-gray-500">
                           Order #{order.id}
                         </p>
@@ -389,7 +425,7 @@ export default function ProfilePage() {
                           Placed on {order.placedDate}
                         </p>
                       </div>
-                      <div className="flex items-center space-x-2 sm:space-x-4">
+                      <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
                         <span
                           className={`inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium ${
                             order.status === "Delivered"
@@ -414,24 +450,29 @@ export default function ProfilePage() {
                     {order.items.map((item, index) => (
                       <div
                         key={index}
-                        className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-4"
+                        className="flex flex-col sm:flex-row justify-between items-center mb-4 space-y-2 sm:space-y-0"
                       >
-                        <img
-                          src="/images/Collection2.png"
-                          alt="product"
-                          className="w-20 h-20 md:w-40 md:h-32 rounded self-center sm:self-start"
-                        />
-                        <div className="w-full flex justify-between items-center text-center sm:text-left">
-                          <div className="space-y-4">
-                            <h4 className="text-sm md:text-lg lg:text-2xl font-semibold">
+                        <div className="flex items-center space-x-4 w-full sm:w-auto">
+                          <img
+                            src="/images/Collection2.png"
+                            alt="product"
+                            className="w-20 h-20 rounded"
+                          />
+                          <div className="flex-1 space-y-2">
+                            <h5 className="text-sm font-semibold">
                               {item.name}
-                            </h4>
-                            <p className="text-xs md:text-sm sm:text-lg text-gray-500">
+                            </h5>
+                            <p className="text-xs text-gray-500">
                               {item.quantity} x Rs. {item.price}
                             </p>
+                            <p className="md:hidden text-sm font-semibold">
+                              {item.total}
+                            </p>
                           </div>
-                          <p className="text-sm lg:text-lg">{item.total}</p>
                         </div>
+                        <p className="hidden md:block text-sm font-semibold">
+                          {item.total}
+                        </p>
                       </div>
                     ))}
                     <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mt-4">
