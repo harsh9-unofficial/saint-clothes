@@ -1,5 +1,6 @@
 import React from "react";
 import { RxCross1, RxPlus } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 const CartItem = ({ product }) => (
   <div className="flex flex-col sm:flex-row items-center justify-between border-b py-6 gap-2">
@@ -12,7 +13,7 @@ const CartItem = ({ product }) => (
 
     {/* Details */}
     <div className="flex flex-col justify-between flex-1 w-full">
-      <div className="flex flex-col mb-4 sm:mb-0">
+      <div className="flex flex-col mb-4 sm:mb-0 space-y-4">
         <h3 className="text-lg font-semibold">{product.name}</h3>
         <p className="text-gray-700 mt-1">Rs. {product.price}</p>
         <p className="text-sm text-gray-500 mt-1">{product.variant}</p>
@@ -78,9 +79,11 @@ const Cart = ({ onClose }) => {
           Taxes and shipping calculated at checkout
         </p>
         <div className="flex justify-between items-center">
-          <button className="bg-[#527557] text-white px-6 py-3 rounded">
-            Checkout
-          </button>
+          <Link to="/checkout">
+            <button className="bg-[#527557] text-white px-6 py-3 rounded cursor-pointer">
+              Checkout
+            </button>
+          </Link>
           <span className="text-lg font-semibold">₹49,200.00</span>
         </div>
       </div>

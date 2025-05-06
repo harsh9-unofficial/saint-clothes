@@ -174,7 +174,7 @@ const CheckoutPage = () => {
                 Tax <span className="ml-2">₹{tax.toLocaleString()}</span>
               </p>
               <button className="w-full mt-4 bg-[#527557] text-[#F6F6F6] py-3 rounded-md cursor-pointer font-medium">
-                Checkout ₹{total.toLocaleString()}
+                Pay ₹{total.toLocaleString()}
               </button>
             </div>
           ) : (
